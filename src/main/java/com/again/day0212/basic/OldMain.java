@@ -1,5 +1,6 @@
 package com.again.day0212.basic;
 
+// 0918에 했던 풀이
 public class OldMain {
 
     public static class Fraction {
