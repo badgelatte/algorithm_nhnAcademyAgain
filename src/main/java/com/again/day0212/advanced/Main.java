@@ -25,7 +25,10 @@ public class Main {
 
 
         public void normalize() {
+            int gcd = gcd(Math.abs(numerator), denominator);
 
+            numerator /= gcd;
+            denominator /= gcd;
         }
 
         public static int gcd(int first, int second) {
@@ -35,7 +38,10 @@ public class Main {
                 return gcd(second, first % second);
         }
 
-
+        @Override
+        public String toString() {
+            return numerator + "/" + denominator;
+        }
     }
 
     /**
@@ -51,7 +57,11 @@ public class Main {
     public static int getDecimalNumber(BigDecimal num) {
         String str = num.toPlainString();
 
-        return 0;
+        if (str.contains("-")) {
+            return str.length() - 3;
+        }
+
+        return str.length() - 2;
     }
 
     public static String solution(String input) {
@@ -59,8 +69,8 @@ public class Main {
 
         int decimalNumber = getDecimalNumber(number);
 
-        double denominator = 0;
-        int numerator = 0;
+        double denominator = Math.pow(10, decimalNumber);
+        int numerator = (number.multiply(new BigDecimal(denominator))).intValue();
 
         return new Fraction(numerator, (int) denominator).toString();
     }
