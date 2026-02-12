@@ -21,25 +21,44 @@ public class Main {
             return denominator;
         }
 
+        //약분
         public void normalize() {
-            // TODO 약분
+            int gcd = gcd(numerator,denominator);
+
+            this.numerator /= gcd;
+            this.denominator /= gcd;
         }
 
-        // TODO 최대공약수
+        // 최대공약수
         public static int gcd(int first, int second) {
-            return 0;
+            first = Math.abs(first);
+            second = Math.abs(second);
+            int minNum = Math.min(first, second);
+            int gcd = 1;
+
+            for (int i = 1; i <= minNum; i++) {
+                if (first % i == 0 && second % i == 0) {
+                    gcd = i;
+                }
+            }
+
+            return gcd;
         }
 
-        // TODO
         @Override
         public String toString() {
-            return "";
+            if(denominator < 0) {
+                return numerator * -1 + "/" + denominator * -1;
+            }
+
+            return numerator + "/" + denominator;
         }
     }
 
     public static String solution(int numerator, int denominator) {
-        // TODO
-        return "";
+        Fraction fraction = new Fraction(numerator, denominator);
+
+        return fraction.toString();
     }
 
     public static void main(String[] args) {
