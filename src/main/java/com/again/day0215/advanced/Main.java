@@ -2,39 +2,38 @@ package com.again.day0215.advanced;
 
 import com.again.day0215.OrderType;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static Integer[] solution(Integer[] arr, int[] indexs, OrderType orderType) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int i = 0; i < indexs.length; i++) {
+            set.add(indexs[i]);
+        }
+
         if (orderType.equals(OrderType.ASC)) {
-            ascBubbleSort(arr, indexs);
+            ascBubbleSort(arr, set);
         }
         else {
-            descBubbleSort(arr, indexs);
+            descBubbleSort(arr, set);
         }
 
         return arr;
     }
 
-    public static boolean isContain(int[] arr, int num) {
-        for (int arrNum : arr) {
-            if(arrNum == num) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public static void ascBubbleSort(Integer[] arr, int[] indexs) {
+    public static void ascBubbleSort(Integer[] arr, Set<Integer> indexs) {
         int temp = 0;
         int count = 1;
 
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
-                if (isContain(indexs, j)) {
+                if (indexs.contains(j)) {
                     continue;
                 }
 
-                while(isContain(indexs, j + count)) {
+                while(indexs.contains(j + count)) {
                     count++;
                 }
 
@@ -49,17 +48,17 @@ public class Main {
         }
     }
 
-    public static void descBubbleSort(Integer[] arr, int[] indexs) {
+    public static void descBubbleSort(Integer[] arr, Set<Integer> indexs) {
         int temp = 0;
         int count = 1;
 
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
-                if (isContain(indexs, j)) {
+                if (indexs.contains(j)) {
                     continue;
                 }
 
-                while (isContain(indexs, j + count)) {
+                while (indexs.contains(j + count)) {
                     count++;
                 }
 
