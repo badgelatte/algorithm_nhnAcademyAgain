@@ -3,6 +3,7 @@ package com.again.day0227;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
+// 1013에 완성한 풀이
 public class OldH2O {
     private int count = 2;
     boolean useOxygen = false;

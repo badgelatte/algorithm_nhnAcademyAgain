@@ -1,13 +1,27 @@
 package com.again.day0227;
 
 public class H2O {
-    public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
-        // 수소 방출
+    int HCount = 0;
+    int OCount = 0;
+
+    public synchronized void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
+        while (HCount > 2) {
+            wait();
+        }
+
         releaseHydrogen.run();
+        HCount++;
+        notifyAll();
+
     }
 
-    public void oxygen(Runnable releaseOxygen) throws InterruptedException {
-        // 산소 방출
+    public synchronized void oxygen(Runnable releaseOxygen) throws InterruptedException {
+        while (OCount > 1) {
+            wait();
+        }
+
         releaseOxygen.run();
+        OCount++;
+        notifyAll();
     }
 }
