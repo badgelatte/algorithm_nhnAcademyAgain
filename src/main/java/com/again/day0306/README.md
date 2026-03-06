@@ -36,3 +36,4 @@ public class BoundedBlockingQueue {
 
 ## 공부거리
 - [BlockingQueue](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/BlockingQueue.html)
+- 참고 사이트 : https://ywoosang.tistory.com/31
