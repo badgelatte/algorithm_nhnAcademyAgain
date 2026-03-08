@@ -1,10 +1,11 @@
 package com.again.day0308.general;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyStack implements Iterable {
     private int top;
-    private final int[] arr;
+    private int[] arr;
 
     private final int capacity;
 
@@ -20,11 +21,27 @@ public class MyStack implements Iterable {
 
     public void push(int data) {
         // TODO 1.stack에 data를 넣습니다.
-        arr[++top] = data;
+        if (capacity - 1> top) {
+            arr[++top] = data;
+        }
+
+        else {
+            arr = Arrays.copyOf(arr, capacity * 2);
+            arr[++top] = data;
+        }
     }
 
     public int pop() {
         // TODO 2.데이터를 반환하고 반환된 데이터는 stack에서 제거됩니다.
+        if (top < 0) {
+            throw new NullPointerException();
+        }
+
+        if (capacity > top && top < arr.length / 2) {
+            arr = Arrays.copyOf(arr, arr.length / 2);
+            return arr[top--];
+        }
+
         return arr[top--];
     }
 

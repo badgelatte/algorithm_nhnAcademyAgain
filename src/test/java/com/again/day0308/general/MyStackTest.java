@@ -29,6 +29,27 @@ class MyStackTest {
     }
 
     @Test
+    @DisplayName("array check")
+    void push_exception_test() {
+        for (int i = 1; i < 13; i++) {
+            myStack.push(i);
+        }
+
+        Assertions.assertEquals(myStack.pop(),12);
+        Assertions.assertEquals(myStack.pop(),11);
+        Assertions.assertEquals(myStack.pop(),10);
+        Assertions.assertEquals(myStack.pop(),9);
+    }
+
+    @Test
+    @DisplayName("stack : -1")
+    void pop_exception_test() {
+        Assertions.assertThrows(NullPointerException.class, () -> {
+            myStack.pop();
+        });
+    }
+
+    @Test
     @DisplayName("push, pop test")
     void push_pop_test () {
         myStack.push(1);
