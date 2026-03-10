@@ -1,0 +1,56 @@
+= General
+
+= 문자열 뒤집기
+
+* stack을 이용하여 문자열 뒤집기를 구현합니다.
+
+== Solution.java
+[,java]
+----
+public class Solution {
+    public static String reverse(String str){
+        //todo 1.stack을 이용한 문자열 뒤집기 구현.
+        // str의 범위는 0 < str <=100 입니다.
+        return "";
+    }
+}
+
+----
+
+
+== 테스트
++ test code가 동작하도록 구현합니다.
+
+
+---
+
+
+= Basic
+---
+= Standard Deviation(표준편차)
+
+== Solution.java
+
+[source,java]
+----
+public class Solution {
+
+    public static double calcStandardDeviation(double[] arr){
+        //todo 1 표준편차 계산, 아래 링크를 참고하여 구현합니다.
+        //https://www.mathsisfun.com/data/standard-deviation.html
+        return 0d;
+    }
+}
+----
+
+== Test Code
+* Test Code가 통과하도록 구현합니다.
+
+[source,java]
+----
+include::../../../../../test/java/com/again/day0310/basic/SolutionTest.java[]
+----
+
+
+== Reference
+* https://www.mathsisfun.com/data/standard-deviation.html[mathisfun.com, 표준편차]
