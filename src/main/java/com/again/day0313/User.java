@@ -8,4 +8,8 @@ public class User {
         this.userId = userId;
         this.userName = userName;
     }
+
+    public boolean equals(User user) {
+        return this.userId.equals(user.userId) && this.userName.equals(user.userName);
+    }
 }
