@@ -1,0 +1,57 @@
+= Browser History (using stack)
+
+* Browser의 visit, forward, back 기능을 stack을 이용해서 구현합니다.
+* Browser의 시작 페이지는 http://nhnacademy.com 입니다.
+
+----
+welcompage = "http://nhnacademy.com"
+visit("http://payco.com")
+back(2)
+이면
+http://nhnacademy.com 이 출력됩니다.
+
+
+----
+
+
+== Browser.java
+
+[source,java]
+----
+public class Browser {
+
+    private final Stack<String> backStack = new Stack<>();
+    private final Stack<String> forwardStack = new Stack<>();
+
+    private Browser(String welcomePage){
+
+    }
+
+    public static Browser of(){
+        return null;
+    }
+
+    public void visit(String url){
+
+    }
+
+    public String back(int steps){
+        return "";
+    }
+
+    public String forward(int steps) {
+        return "";
+    }
+
+}
+----
+
+== BrowserTest.java
+* TestCode를 순서대로 실행합니다.
+** mvn clean test
+
+[source,java]
+----
+include::../../../../../test/java/com/again/day0314/BrowserTest.java[]
+----
+
