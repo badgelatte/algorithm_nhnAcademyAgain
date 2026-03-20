@@ -1,0 +1,40 @@
+= LinkedList 구현
+
+== MyList.java
+* MyArrayList에서 구현했던 MyList interface
+
+[source, java]
+----
+include::MyList.java[]
+----
+
+== ILinkedList.java
+* LinkedList interface
+
+[source, java]
+----
+include::ILinkedList.java[]
+----
+
+=== Node.java
+
+[source, java]
+----
+include::Node.java[]
+----
+
+== MyLinkedList.java
+* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html[LinkedList]를 참고하여 구현합니다.
+
+[source, java]
+----
+include::MyLinkedList.java[]
+----
+
+== TestCode
+* junit5을 이용하여 TestCode를 작성하세요.
+
+[source, java]
+----
+include::../../../../../test/java/com/again/day0318/MyLinkedListTest.java[]
+----
