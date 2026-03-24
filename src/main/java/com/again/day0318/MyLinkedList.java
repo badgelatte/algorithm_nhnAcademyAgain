@@ -204,7 +204,12 @@ public class MyLinkedList<E> implements ILinkedList<E>, MyList<E>, Iterable<E> {
         Node<E> current = head;
 
         while (current.hasNext()) {
-            if (Objects.equals(o, current.getData())) {
+            if (o.getClass() == Node.class) {
+                if (Objects.equals(((Node)o).getData(), current.getData())) {
+                    return true;
+                }
+            }
+            else if (Objects.equals(o, current.getData())) {
                 return true;
             }
 
