@@ -1,0 +1,27 @@
+= HashMap 구현하기
+
+== IMap.java
+
+[source,java]
+----
+include::IMap.java[]
+----
+
+== MyHashMap.java
+
+* HashMap 을 참고합니다.
+** https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html[HashMap]
+** https://www.baeldung.com/java-hashmap[A Guide to Java HashMap]
+
+[source,java]
+----
+include::MyHashMap.java[]
+----
+
+== Test Code 작성
+* Junit5을 이용하여 Test Code를 작성합니다.
+
+[source,java]
+----
+include::../../../../../test/java/com/again/day0325/MyHashMapTest.java[]
+----
