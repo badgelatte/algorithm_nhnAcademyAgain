@@ -1,9 +1,14 @@
 package com.again.day0325;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class MyHashMap<K,V> implements IMap<K,V> {
     private static final int DEFAULT_CAPACITY = 10;
     private int size;
     private Object[] table;
+
+    private Set<K> keySet = new HashSet<>();
 
     public MyHashMap(int capacity) {
         if (capacity < 0) {
@@ -16,6 +21,10 @@ public class MyHashMap<K,V> implements IMap<K,V> {
 
     public MyHashMap() {
         this(DEFAULT_CAPACITY);
+    }
+
+    public Set<K> getKeySet() {
+        return keySet;
     }
 
     @Override
@@ -66,6 +75,7 @@ public class MyHashMap<K,V> implements IMap<K,V> {
         int hash = key.hashCode();
         HashNode<K, V> node = new HashNode<>(hash, key, value);
         int index = hash % table.length;
+        keySet.add(key);
 
         if (table[index] == null) {
             table[index] = node;

@@ -1,0 +1,28 @@
+= HashSet 구현하기
+
+== ISet.java
+
+[source,java]
+----
+include::ISet.java[]
+----
+
+== MyHashSet.java
+
+* Set, HashSet 을 참고합니다.
+** https://docs.oracle.com/javase/8/docs/api/java/util/Set.html[Set]
+** https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html[HashSet]
+** https://www.baeldung.com/java-hashset[A Guide to HashSet in Java]
+
+[source,java]
+----
+include::MyHashSet.java[]
+----
+
+== Test Code 작성
+* Junit5을 이용하여 Test Code를 작성합니다.
+
+[source,java]
+----
+include::../../../../../../src/test/java/com/again/day0331/MyHashSetTest.java[]
+----
